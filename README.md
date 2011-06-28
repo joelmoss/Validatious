@@ -36,6 +36,23 @@ usual Rails way:
 The old Rails 2 style validations are also supported:
 
     validates_url_format_of :url
+    
+    
+## Validations
+
+Validatious currently provides the following validators:
+
+
+### URL
+
+This validates the format of a URL, ensuring that the attribute conforms to the
+correct format of a URL.
+
+    validates :url, :url => true  
+
+or
+
+    validates_url_format_of :url
 
 
 ## CONTRIBUTE
