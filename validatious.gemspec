@@ -15,5 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = Validatious::VERSION
   
+  gem.add_dependency 'activemodel'
+  
   gem.add_development_dependency "rspec"
 end
