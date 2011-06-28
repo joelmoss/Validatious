@@ -4,9 +4,9 @@ require File.expand_path('../lib/validatious/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Joel Moss"]
   gem.email         = ["joel@developwithstyle.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ''
+  gem.description   = %q{A collection of delicious Rails validators}
+  gem.summary       = %q{A collection of delicious Rails validators}
+  gem.homepage      = 'https://github.com/joelmoss/validatious'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
