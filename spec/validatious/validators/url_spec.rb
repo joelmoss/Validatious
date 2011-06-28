@@ -5,7 +5,7 @@ require "spec_helper"
 describe Validatious::Validators::UrlValidator do
   
   before(:each) do
-    Post.validates(:url, :url => true)
+    Post.validates_url_format_of(:url)
   end
   
   let(:post) { post = Post.new(:title => "The title", :url => "invalid URL") }

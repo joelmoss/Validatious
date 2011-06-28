@@ -1,0 +1,4 @@
+en:
+  errors:
+    messages:
+      invalid_url: "is not a valid URL"

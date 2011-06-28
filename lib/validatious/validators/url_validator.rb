@@ -16,7 +16,7 @@ module Validatious
       }iux
       
       def validate_each(record, attribute, value)
-        record.errors[attribute] << 'must be a valid URL' if value.to_s !~ REGEX
+        record.errors.add(attribute, :invalid_url, options) if value.to_s !~ REGEX
       end
     end
   end
