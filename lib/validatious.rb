@@ -1,16 +1,12 @@
-require 'active_model'
-require 'active_support/dependencies/autoload'
-
 require "validatious/version"
 
 module Validatious
   module Validators
-    extend ActiveSupport::Autoload
-    
-    autoload :UrlValidator
+    # nothing to see here, move along...
   end
 end
 
+require "validatious/validators/url_validator"
 require "validatious/helper_methods"
 
 require 'active_support/i18n'

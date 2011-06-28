@@ -1,3 +1,4 @@
+require 'active_model'
 require "validatious"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
