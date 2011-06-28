@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "validatious"
   gem.require_paths = ['lib']
   gem.version       = Validatious::VERSION
+  
+  gem.add_development_dependency "rspec"
 end
