@@ -53,6 +53,18 @@ correct format of a URL.
 or
 
     validates_url_format_of :url
+    
+    
+### Email
+
+This validates the format of an email address, ensuring that the attribute conforms
+to the correct format of an email address.
+
+    validates :email, :email => true  
+
+or
+
+    validates_email_format_of :email
 
 
 ## CONTRIBUTE
