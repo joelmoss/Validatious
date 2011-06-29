@@ -2,3 +2,4 @@ en:
   errors:
     messages:
       invalid_url: "is not a valid URL"
+      invalid_email: "is not a valid email address"
