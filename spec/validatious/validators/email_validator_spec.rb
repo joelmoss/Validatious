@@ -8,7 +8,7 @@ describe Validatious::Validators::EmailValidator do
     Topic.validates_email_format_of(:email)
   end
   
-  let(:topic) { post = Topic.new(:title => "The title", :email => "invalid email") }
+  let(:topic) { Topic.new(:title => "The title", :email => "invalid email") }
   
   [
     'bob@bones.com',

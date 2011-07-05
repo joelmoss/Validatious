@@ -3,3 +3,4 @@ en:
     messages:
       invalid_url: "is not a valid URL"
       invalid_email: "is not a valid email address"
+      invalid_text_content: "has incorrect capitalization and punctuation. (ie: All sentences should begin with a capital letter and end with a punctuation mark, etc.)"

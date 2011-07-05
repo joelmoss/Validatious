@@ -8,7 +8,7 @@ describe Validatious::Validators::UrlValidator do
     Post.validates_url_format_of(:url)
   end
   
-  let(:post) { post = Post.new(:title => "The title", :url => "invalid URL") }
+  let(:post) { Post.new(:title => "The title", :url => "invalid URL") }
   
   [
     'http://example.com',

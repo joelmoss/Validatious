@@ -65,6 +65,34 @@ to the correct format of an email address.
 or
 
     validates_email_format_of :email
+    
+    
+### Text Content
+
+Extracted from [validates_text_content](https://github.com/aarongough/validates_text_content), this validates the content of a text attribute, to determine
+whether or not a block of English text meets certain quality standards.
+
+    validates :comment, :text_content => true  
+
+or
+
+    validates_text_content_of :comment
+    
+#### Examples
+
+ - Rejects:
+  - "this comment has absolutely no capitalization."
+  - "This comment has no type of punctuation"
+  - "Fdkjd dk dkkjhd kjdhkjd kjdhdhdl alkasla lka alk"
+  - "THIS COMMENT IS ALL IN UPPERCASE. ME NO WANT!"
+  - "Thiscommenthasabsolutelynospacesthereisnowaythisisgood."
+  - "THIS COMMENT is MORE THAN 80% CAPITALS."
+  - "THIS pERSON hAS tHEIR cAPS-lOCK oN."
+     
+ - Accepts:
+  - "This is a very simple test comment."
+  - "Supercalifragilisticexpialadocious: a super long word!"
+  - "How many words can I think of that don't contain an 'e'?"
 
 
 ## CONTRIBUTE
