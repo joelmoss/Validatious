@@ -1,8 +1,6 @@
 Validatious -- A collection of delicious Rails validators
 =========================================================
 
-## DESCRIPTION
-
 No matter what app you are working on, Rails never seems to include all the
 validations you need, and you end having to repeat yourself over and over by
 writing regex validations and/or custom validators.
@@ -65,6 +63,26 @@ to the correct format of an email address.
 or
 
     validates_email_format_of :email
+    
+
+### Postal Code
+
+This validates the format of a postal code address, ensuring that the attribute conforms
+to the correct format as specified by the given country (default: US).
+
+    validates :zip, :postal_code => true
+    
+or specify a different country
+    
+    validates :zip, :postal_code => { :country => 'UK' }
+    
+or validate for several countries
+    
+    validates :zip, :postal_code => { :country => [ 'US', 'CA' ] }
+
+or
+
+    validates_postal_code_format_of :zip
     
     
 ### Text Content
