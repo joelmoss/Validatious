@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Validatious by joelmoss</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Validatious</h1>
+        <p>A collection of delicious Rails validators</p>
+        <p class="view"><a href="https://github.com/joelmoss/Validatious">View the Project on GitHub <small>joelmoss/Validatious</small></a></p>
+        <ul>
+          <li><a href="https://github.com/joelmoss/Validatious/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/joelmoss/Validatious/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/joelmoss/Validatious">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Validatious -- A collection of delicious Rails validators</h1>
+
+<p>No matter what app you are working on, Rails never seems to include all the
+validations you need, and you end having to repeat yourself over and over by
+writing regex validations and/or custom validators.</p>
+
+<p>Validatious solves this problem by packaging up all these often used, but
+missing Rails validators, into one single RubyGem.</p>
+
+<h2>INSTALLATION</h2>
+
+<p>The best way to install Validatious is with RubyGems:</p>
+
+<pre><code>$ [sudo] gem install validatious
+</code></pre>
+
+<p>If you're installing from source, you can use <a href="http://gembundler.com/">Bundler</a> to pick up all the
+gems:</p>
+
+<pre><code>$ bundle install # ([more info](http://gembundler.com/bundle_install.html))
+</code></pre>
+
+<h2>USAGE</h2>
+
+<p>All the validators in Validatious are designed to work with Rails 3 and up, and
+take advantage of ActiveModel::Validator. This means that they are all used in the
+usual Rails way:</p>
+
+<pre><code>validates :url, :url =&gt; true
+</code></pre>
+
+<p>The old Rails 2 style validations are also supported:</p>
+
+<pre><code>validates_url_format_of :url
+</code></pre>
+
+<h2>Validations</h2>
+
+<p>Validatious currently provides the following validators:</p>
+
+<h3>URL</h3>
+
+<p>This validates the format of a URL, ensuring that the attribute conforms to the
+correct format of a URL.</p>
+
+<pre><code>validates :url, :url =&gt; true  
+</code></pre>
+
+<p>or</p>
+
+<pre><code>validates_url_format_of :url
+</code></pre>
+
+<h3>Email</h3>
+
+<p>This validates the format of an email address, ensuring that the attribute conforms
+to the correct format of an email address.</p>
+
+<pre><code>validates :email, :email =&gt; true  
+</code></pre>
+
+<p>or</p>
+
+<pre><code>validates_email_format_of :email
+</code></pre>
+
+<h3>Postal Code</h3>
+
+<p>This validates the format of a postal code address, ensuring that the attribute conforms
+to the correct format as specified by the given country (default: US).</p>
+
+<pre><code>validates :zip, :postal_code =&gt; true
+</code></pre>
+
+<p>or specify a different country</p>
+
+<pre><code>validates :zip, :postal_code =&gt; { :country =&gt; 'UK' }
+</code></pre>
+
+<p>or validate for several countries</p>
+
+<pre><code>validates :zip, :postal_code =&gt; { :country =&gt; [ 'US', 'CA' ] }
+</code></pre>
+
+<p>or</p>
+
+<pre><code>validates_postal_code_format_of :zip
+</code></pre>
+
+<h3>Text Content</h3>
+
+<p>Extracted from <a href="https://github.com/aarongough/validates_text_content">validates_text_content</a>, this validates the content of a text attribute, to determine
+whether or not a block of English text meets certain quality standards.</p>
+
+<pre><code>validates :comment, :text_content =&gt; true  
+</code></pre>
+
+<p>or</p>
+
+<pre><code>validates_text_content_of :comment
+</code></pre>
+
+<h4>Examples</h4>
+
+<ul>
+<li>
+<p>Rejects:</p>
+
+<ul>
+<li>"this comment has absolutely no capitalization."</li>
+<li>"This comment has no type of punctuation"</li>
+<li>"Fdkjd dk dkkjhd kjdhkjd kjdhdhdl alkasla lka alk"</li>
+<li>"THIS COMMENT IS ALL IN UPPERCASE. ME NO WANT!"</li>
+<li>"Thiscommenthasabsolutelynospacesthereisnowaythisisgood."</li>
+<li>"THIS COMMENT is MORE THAN 80% CAPITALS."</li>
+<li>"THIS pERSON hAS tHEIR cAPS-lOCK oN."</li>
+</ul>
+</li>
+<li>
+<p>Accepts:</p>
+
+<ul>
+<li>"This is a very simple test comment."</li>
+<li>"Supercalifragilisticexpialadocious: a super long word!"</li>
+<li>"How many words can I think of that don't contain an 'e'?"</li>
+</ul>
+</li>
+</ul><h2>CONTRIBUTE</h2>
+
+<p>If you'd like to hack on Validatious, start by forking my repo on GitHub:</p>
+
+<p><a href="http://github.com/joelmoss/validatious">http://github.com/joelmoss/validatious</a></p>
+
+<p>To get all of the dependencies, install the gem first. The best way to get
+your changes merged back into core is as follows:</p>
+
+<ol>
+<li>Clone down your fork</li>
+<li>Create a thoughtfully named topic branch to contain your change</li>
+<li>Hack away</li>
+<li>Add tests and make sure everything still passes by running <code>rake</code>
+</li>
+<li>If you are adding new functionality, document it in the README</li>
+<li>Do not change the version number, I will do that on my end</li>
+<li>If necessary, rebase your commits into logical chunks, without errors</li>
+<li>Push the branch up to GitHub</li>
+<li>Send a pull request to the joelmoss/validatious project.</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/joelmoss">joelmoss</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
